@@ -8,7 +8,7 @@ int minDiam = 10;
 int maxDiam = 60;
 void setup() {
   size(800, 600);
-
+colorMode(HSB, 360, 100, 100, 100);
   for (int i = 0; i < count; i++) {
     loc[i] = new PVector(random(sz[i]+20, width-sz[i]-20), random(sz[i]+20, height-sz[i]-20));
     vel[i] = PVector.random2D();
@@ -55,6 +55,7 @@ void draw() {
             vel[i].div(mass[i]);
           }
         }
+        fill(frameCount%360, 100, 83, 99);
         ellipse(loc[i].x, loc[i].y, sz[i], sz[i]);
         if ((loc[i].x+sz[i]/2)>width || (loc[i].x-sz[i]/2)<0) {
           vel[i].x*=-1;
