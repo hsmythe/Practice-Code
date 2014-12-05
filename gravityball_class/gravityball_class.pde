@@ -1,4 +1,4 @@
-GravityBall[] ball=new GravityBall[100];
+GravityBall[] ball=new GravityBall[600];
 void setup() {
   size(800, 800);
   for (int i=0; i<ball.length; i++) {
@@ -8,7 +8,7 @@ void setup() {
 
 
 void draw() {
-  background(0);
+//  background(0);
   for (int i=0; i<ball.length; i++) {
     
     ball[i].display();
@@ -25,7 +25,7 @@ class GravityBall {
     loc=new PVector(width/2,height/2);
     vel=PVector.random2D();
     acc=new PVector(0, .1);
-    sz=random(1, 30);
+    sz=30;
   }
   void display() {
     ellipse(loc.x, loc.y, sz, sz);
