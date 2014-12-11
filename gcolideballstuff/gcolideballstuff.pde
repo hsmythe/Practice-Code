@@ -1,13 +1,11 @@
-GravityBall[] ball= new GravityBall[1500];
+GravityBall[] ball= new GravityBall[0];
 void setup() {
   colorMode(HSB, 360, 100, 100, 100);
   size(800, 800);
   for (int i=0; i<ball.length; i++) 
   {
     ball[i]=new GravityBall(random(360));
-   
   }
- 
 }
 
 
@@ -26,7 +24,6 @@ void draw() {
     }
   }
 }
-
 
 
 
