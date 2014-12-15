@@ -1,16 +1,16 @@
 class GravityBall {
   PVector loc, acc, vel;
-  float sz;
+  float sz, alpha;
   GravityBall(float x, float y) {
     loc = new PVector(x, y);
     vel=PVector.random2D();
-    acc=new PVector(0, .7);
+    acc=new PVector(0, .1);
     sz=30;
     alpha=100;
   }
   void display() {
     fill(200,100,100,alpha);
-    //alpha--;
+    alpha--;
     ellipse(loc.x, loc.y, sz, sz);
     
   }
