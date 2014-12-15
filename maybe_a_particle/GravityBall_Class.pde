@@ -10,7 +10,7 @@ class GravityBall {
   }
   void display() {
     fill(200,100,100,alpha);
-    alpha--;
+    //alpha--;
     ellipse(loc.x, loc.y, sz, sz);
     
   }

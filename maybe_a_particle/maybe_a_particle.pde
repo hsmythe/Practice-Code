@@ -25,5 +25,8 @@ void draw() {
     ball.remove(0);
   }
 }
+void mouseDragged(){
+  ball.add(new GravityBall(mouseX, mouseY));
+}
 
 
