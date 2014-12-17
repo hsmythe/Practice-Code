@@ -8,7 +8,6 @@ void setup() {
   size(800, 800);
   max=100;
   p=new Pool();
- 
   noStroke();
 }
 
@@ -16,15 +15,16 @@ void setup() {
 void draw() {
   background(0);
   ball.add(new GravityBall(mouseX, mouseY));
+  p.display();
   for (int i=0; i<ball.size (); i++) 
   {
     GravityBall b=ball.get(i);
     b.display();
     b.move();
-    p.Catcher();
-//    if (ball.size() >max) {
-//      ball.remove(i);
-//    }
+    
+    if (p.caught(b)==true) {
+        ball.remove(i);
+    }
   }
 }
 void mouseDragged() {
