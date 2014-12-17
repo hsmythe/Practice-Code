@@ -1,30 +1,30 @@
 class GravityBall {
   PVector loc, acc, vel;
-  float sz, alpha;
+  float sz, alpha,l;
+  PImage water;
   GravityBall(float x, float y) {
     loc = new PVector(x, y);
     vel=PVector.random2D();
     acc=new PVector(0, .1);
     sz=30;
     alpha=100;
+    imageMode(CENTER);
+    water = loadImage("water.png");
   }
   void display() {
-    fill(200,100,100,alpha);
-    alpha--;
-    ellipse(loc.x, loc.y, sz, sz);
-    
+    image(water, loc.x, loc.y, sz, sz);
   }
   void move() {
     vel.add(acc);
     loc.add(vel);
   }
-  void bounce() { 
-    if (loc.x+sz/2> width || loc.x - sz/2 < 0) {
-      vel.x *= -1;
+  void pool(float l) {
+    fill(210, 100, 100, 100);
+    if (loc.y>height-h) {
+      h-=.01;
+      ball.remove(l);
     }
-    if (loc.y + sz/2 > height || loc.y - sz/2 < 0) {
-      vel.y *= -1;
-    }
+     rect(0, height, width, h);
   }
 }
 
