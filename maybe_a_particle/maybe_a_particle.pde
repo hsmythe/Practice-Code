@@ -15,8 +15,11 @@ void setup() {
 
 
 void draw() {
+  //lightning in background
   background(light);
+  //get rain to fallow mouse
   ball.add(new GravityBall(mouseX, mouseY));
+  //displaying puddle every frame not for every ball
   p.display();
  
   for (int i=0; i<ball.size (); i++) 
@@ -24,7 +27,9 @@ void draw() {
     GravityBall b=ball.get(i);
     b.display();
     b.move();
+    //if filled will check to see if >0
     p.drain();
+    // removed if caught
     if (p.caught(b)==true) {
         ball.remove(i);
     }

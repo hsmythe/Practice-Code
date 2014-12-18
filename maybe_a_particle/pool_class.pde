@@ -1,7 +1,7 @@
 class Pool {
 
   float h;
-
+          
   Pool() {
 
     h=0;
@@ -13,12 +13,13 @@ class Pool {
   }
   boolean caught(GravityBall b) {
     if (b.loc.y>height-h) {
-      h-=3;
+      h-=.5;
       return true;
     } else { 
       return false;
     }
   }
+  //drain after filled with button
   void drain() {
     textSize(50);
     fill(0,0, 100, 100);

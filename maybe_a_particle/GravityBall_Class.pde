@@ -7,8 +7,10 @@ class GravityBall {
     loc = new PVector(x, y);
     vel=PVector.random2D();
     acc=new PVector(0, .1);
+    
     sz=30;
     alpha=100;
+    
     imageMode(CENTER);
     water = loadImage("water.png");
   }
