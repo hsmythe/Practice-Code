@@ -13,10 +13,24 @@ class Pool {
   }
   boolean caught(GravityBall b) {
     if (b.loc.y>height-h) {
-      h-=.01;
+      h-=3;
       return true;
     } else { 
       return false;
+    }
+  }
+  void drain() {
+    textSize(50);
+    fill(0,0, 100, 100);
+    if ( h<= -height) {
+      rect(0,height/2-40,width,80);
+      fill(0, 100, 100, 100);
+      text("click to drain", 95, height/2);
+      if (mouseX>0 && mouseX<width && mouseY>height/2-40 && mouseY <height/2-40+80){
+      if (mousePressed) {
+        h=0;
+      }
+      }
     }
   }
 }
